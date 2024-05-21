@@ -10,7 +10,7 @@ const Jobs = () => {
 
   useEffect(()=>{
     try{
-      axios.get("/api/v1/job/getall", {withCredentials:true})
+      axios.get("https://carrerhub-backend.onrender.com/api/v1/job/getall", {withCredentials:true})
       .then(response=>{
         setJobs(response.data);
       });
