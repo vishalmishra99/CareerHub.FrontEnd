@@ -16,7 +16,7 @@ const MyJobs = () => {
   useEffect(()=>{
     const fetchJobs = async() => {
       try {
-        const {data} = await axios.get("/api/v1/job/getmyjobs", { withCredentials: true});
+        const {data} = await axios.get("https://carrerhub-backend.onrender.com/api/v1/job/getmyjobs", { withCredentials: true});
         setMyJobs(data.myjobs);
       }
       catch(error){
@@ -45,7 +45,7 @@ const MyJobs = () => {
   //Function For Editing Job
   const handleUpdateJob = async(jobId) =>{
     const updatedJob = myJobs.find((job)=> job._id === jobId);
-    await axios.put(`/api/v1/job/update/${jobId}`, updatedJob, {
+    await axios.put(`https://carrerhub-backend.onrender.com/api/v1/job/update/${jobId}`, updatedJob, {
       withCredentials: true
     })
     .then(res=> {
@@ -59,7 +59,7 @@ const MyJobs = () => {
 
   //Function For Deleting Job
   const handleJobDelete = async (jobId) => {
-    await axios.delete(`/api/v1/job/delete/${jobId}`, 
+    await axios.delete(`https://carrerhub-backend.onrender.com/api/v1/job/delete/${jobId}`, 
     { withCredentials: true })
     .then((res)=>{
       toast.success(res.data.message);
