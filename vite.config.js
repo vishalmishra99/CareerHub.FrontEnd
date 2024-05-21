@@ -9,7 +9,7 @@ export default defineConfig({
     proxy: {
       '/api': { 
         port: 3000,
-        target: 'http://localhost:4000',
+        target: 'https://carrerhub-backend.onrender.com',
         changeOrigin: true,
     }
     }
