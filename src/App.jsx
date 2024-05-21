@@ -32,7 +32,7 @@ const App = () => {
         setIsAuthorized(true);
       } 
       catch(error){
-        setIsAuthorized(true);
+        setIsAuthorized(false);
       }
     };
     fetchUser();
