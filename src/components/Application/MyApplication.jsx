@@ -19,14 +19,14 @@ const MyApplications = () => {
   useEffect(()=>{
     try{
       if(user && user.role === "Employer"){
-        axios.get("/api/v1/application/employer/getall", { withCredentials: true})
+        axios.get("https://carrerhub-backend.onrender.com/api/v1/application/employer/getall", { withCredentials: true})
         .then((response)=>{
           setApplications(response.data.applications);
         })
       }
       else if(user && user.role === "Job Seeker")
       {
-        axios.get("/api/v1/application/jobseeker/getall", { withCredentials: true})
+        axios.get("https://carrerhub-backend.onrender.com/api/v1/application/jobseeker/getall", { withCredentials: true})
         .then((response)=>{
           setApplications(response.data.applications);
         })
@@ -43,7 +43,7 @@ const MyApplications = () => {
   }
   const deleteApplication = (id) =>{
     try{
-       axios.delete(`/api/v1/application/delete/${id}`, {withCredentials: true} )
+       axios.delete(`https://carrerhub-backend.onrender.com/api/v1/application/delete/${id}`, {withCredentials: true} )
       .then((response)=>{
         toast.success(response.data.message);
         setApplications((prevApplication)=>{
