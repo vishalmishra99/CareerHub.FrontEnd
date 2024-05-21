@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     try{
       const {data} = await axios.post(
-        "/api/v1/user/login",
+        "https://carrerhub-backend.onrender.com/api/v1/user/login",
         { email, password, role },
         {
           withCredentials: true,
