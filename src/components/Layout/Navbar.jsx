@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleLogout = async ()=>{
     try{
-        const response = await axios.get("/api/v1/user/logout", { withCredentials: true });
+        const response = await axios.get("https://carrerhub-backend.onrender.com/api/v1/user/logout", { withCredentials: true });
         toast.success(response.data.message);
         setIsAuthorized(false);
         navigateTo("/login");
