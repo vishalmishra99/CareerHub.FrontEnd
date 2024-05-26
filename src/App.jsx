@@ -26,7 +26,7 @@ const App = () => {
   useEffect(()=>{
     const fetchUser = async () =>{
       try{
-        const response = await axios.get("/api/v1/user/getuser", {withCredentials:true});
+        const response = await axios.get("https://carrerhub-backend.onrender.com/api/v1/user/getuser", {withCredentials:true});
         console.log(response);
         setUser(response.data.user);
         setIsAuthorized(true);
