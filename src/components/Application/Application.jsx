@@ -57,7 +57,7 @@ const Application = () => {
 
   if(!isAuthorized || user && user.role === "Employer")
   {
-    navigateTo("");
+    navigateTo("/");
   }
 
   return (
